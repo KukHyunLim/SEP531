@@ -11,9 +11,9 @@ from google.colab import drive
 drive.mount('/content/gdrive')
 ```
 
-## Add HW3 zip file to your directory
+## Add ipython file to your directory
 
-- 실습 코드 파일을 작업할 경로에 추가하기
+- `train.ipynb` 와 `decode.ipynb` 실습 코드 파일을 작업할 경로에 추가하기
 
 ## Append the Environment path
 
