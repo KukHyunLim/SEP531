@@ -17,19 +17,22 @@ unzip iwslt2014_ende.zip
 ### Building the vocabulary
 After downloading the dataset, please execute the following command to generate the vocabulary file for both source and target languages:
 ```bash
-bash run.sh vocab
+bash run.sh vocab [options]
 ```
 Note that you can change parameters or arguments to improve the quality of vocabulary.
 
 ### Training your model
 After building the vocabulary file, please excute the following command to train your model:
 ```bash
-bash run.sh train
+bash run.sh train [options]
 ```
 Also, you can change parameters to obtain better performance on dev set.
 
 ### Testing your model
-We will score your assignment through the BLEU score of your model on the test set. 
+After completing the training process, please execute the following command to obtain the BLEU score and generated translations via a beam search from your trained model:
+```bash
+bash run.sh test [options]
+```
 
 ## Submission
 
