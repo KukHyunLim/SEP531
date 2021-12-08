@@ -133,6 +133,9 @@ def convert_examples_to_features(examples, max_seq_len, tokenizer,
         # Account for [CLS] and [SEP]
         # if the length of tokens is longer than max_seq_len - 2 (i.e, [CLS] and [SEP]),
         # then you must truncate the tokens
+        if len(tokens) > max_seq_len - 2:
+            tokens = tokens[:(max_seq_len - 2)]
+            slot_labels_ids = slot_labels_ids[:(max_seq_len - 2)]
         
         #### END CODE HERE ####
 
@@ -140,16 +143,16 @@ def convert_examples_to_features(examples, max_seq_len, tokenizer,
         # Add [SEP] token
         # Assign segment ids for sequence A
         
-        # tokens = ~
-        # token_type_ids = ~
+        tokens += [sep_token]
+        token_type_ids = [sequence_a_segment_id] * len(tokens)
 
         #### END CODE HERE ####
 
         #### YOUR CODE HERE ####
         # Add [CLS] token
         # Assigen segment ids for [CLS] token
-        # tokens = ~
-        # token_type_ids = ~ 
+        tokens = [cls_token] + tokens
+        token_type_ids = [cls_token_segment_id] + token_type_ids
 
         #### END CODE HERE ####
         
