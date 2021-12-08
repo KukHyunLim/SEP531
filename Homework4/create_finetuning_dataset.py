@@ -135,7 +135,6 @@ def convert_examples_to_features(examples, max_seq_len, tokenizer,
         # then you must truncate the tokens
         if len(tokens) > max_seq_len - 2:
             tokens = tokens[:(max_seq_len - 2)]
-            slot_labels_ids = slot_labels_ids[:(max_seq_len - 2)]
         
         #### END CODE HERE ####
 
